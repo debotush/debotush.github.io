@@ -93,6 +93,28 @@
                 margin-left: 0; /* Center navbar items on smaller screens */
                 justify-content: center;
             }
+            .section-bg {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .contact-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px; /* Space between buttons */
+                width: 100%; /* Ensure buttons take up the full width */
+                max-width: 300px; /* Limit the width of the buttons container */
+            }
+
+            .contact-buttons a {
+                width: 100%; /* Ensure each button takes up full width */
+                max-width: 300px; /* Limit the width of each button */
+                text-align: center;
+                padding: 10px; /* Consistent padding for each button */
+            }
         }
     </style>
 </head>
@@ -206,17 +228,20 @@
         <h2 class="section-title text-center">Contact</h2>
         <div class="section-bg text-center">
             <p>Feel free to connect with me on the following platforms:</p>
-            <a href="mailto:damdebotush@gmail.com" target="_blank" class="btn btn-custom me-3">
-                <i class="fas fa-envelope"></i> Gmail
-            </a>
-            <a href="https://www.linkedin.com/in/dam-debotush/" target="_blank" class="btn btn-custom me-3">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/debotush" target="_blank" class="btn btn-custom">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+            <div class="contact-buttons">
+                <a href="mailto:damdebotush@gmail.com" target="_blank" class="btn btn-custom">
+                    <i class="fas fa-envelope"></i> Gmail
+                </a>
+                <a href="https://www.linkedin.com/in/dam-debotush/" target="_blank" class="btn btn-custom">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/debotush" target="_blank" class="btn btn-custom">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
         </div>
     </section>
+
 </div>
 
 <footer>
