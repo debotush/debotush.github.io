@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,130 +7,383 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debotush Dam - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Devicon for technology logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
         header {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px 15px 100px; /* Padding adjusted to make room for the image */
+            padding: 60px 15px 80px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        .profile-container {
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .profile-section {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            position: relative;
+            margin-bottom: 30px;
         }
+
         .profile-picture {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
-            background-color: white; /* Fallback for border contrast */
-            position: absolute;
-            top: -5px; /* Half the height of the image to center it */
-            left: 15px; /* Shift image to the left */
-            z-index: 1000;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
         }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
         nav {
-            background: #343a40;
-            padding-top: 80px; /* Adjusted to accommodate overlapping image */
+            background: var(--dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         nav .nav-link {
             color: white;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
+            margin: 0 5px;
+            border-radius: 30px;
+            padding: 8px 15px !important;
         }
         nav .nav-link:hover {
-            color: #6a11cb;
+            color: white;
+            background: rgba(255,255,255,0.1);
         }
         .section-title {
-            font-weight: bold;
-            color: #2575fc;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
         }
         .section-bg {
-            background: #f8f9fa;
-            padding: 30px 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+        .section-bg:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         footer {
-            background: linear-gradient(to right, #2575fc, #6a11cb);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
             color: white;
             text-align: center;
-            padding: 15px 10px;
+            padding: 25px 10px;
+            margin-top: 50px;
         }
         .btn-custom {
-            background: #6a11cb;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             border: none;
             color: white;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
         }
         .btn-custom:hover {
-            background: #2575fc;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(106, 17, 203, 0.4);
+            color: white;
         }
-        /* Responsive Design Adjustments */
+
+        /* Beautiful Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 5px solid var(--primary);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h5 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .skill-category h5 i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+
+        .skill-item i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .skill-item span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .concept-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .concept-badge {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(106, 17, 203, 0.2);
+        }
+
+        /* Timeline for experience */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
-                padding: 20px 15px 80px; /* Adjust padding for smaller screens */
-                text-align: center; /* Center align text for smaller screens */
+                padding: 30px 15px 50px;
             }
             .profile-picture {
-                width: 120px;
-                height: 120px;
-                top: -1px; /* Adjust for smaller picture size */
-                left: 50%; /* Center on smaller screens */
-                transform: translateX(-50%);
-            }
-            nav {
-                padding-left: 0; /* Remove padding for smaller screens */
-            }
-            .navbar-nav {
-                margin-left: 0; /* Center navbar items on smaller screens */
-                justify-content: center;
+                width: 150px;
+                height: 150px;
             }
             .section-bg {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
                 padding: 20px;
             }
-
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+            .skill-item i {
+                font-size: 2rem;
+            }
             .contact-buttons {
                 display: flex;
                 flex-direction: column;
-                gap: 10px; /* Space between buttons */
-                width: 100%; /* Ensure buttons take up the full width */
-                max-width: 300px; /* Limit the width of the buttons container */
+                gap: 10px;
+                width: 100%;
+                max-width: 300px;
             }
-
             .contact-buttons a {
-                width: 100%; /* Ensure each button takes up full width */
-                max-width: 300px; /* Limit the width of each button */
+                width: 100%;
+                max-width: 300px;
                 text-align: center;
-                padding: 10px; /* Consistent padding for each button */
+                padding: 12px;
             }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 10px;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Debotush Dam</h1>
-    <p class="lead">Software Engineer | Go | Java | Microservices | Docker</p>
-    <div class="profile-container">
-        <img src="SRA02085.jpg" alt="Profile Picture" class="profile-picture">
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-picture">
+                <!-- If your image is broken, this will show a placeholder -->
+                <img src="SRA02085.jpg" alt="Debotush Dam" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
+                <div id="placeholder" style="display: none;">
+                    <i class="fas fa-user fa-3x mb-2"></i>
+                    <span>Profile Image</span>
+                </div>
+            </div>
+            <div class="profile-text text-center">
+                <h1 class="display-4 fw-bold">Debotush Dam</h1>
+                <p class="lead fs-4">Software Engineer | Go | Java | Microservices | Docker</p>
+            </div>
+        </div>
     </div>
 </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -140,115 +395,347 @@
                 <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container my-4">
-    <section id="about" class="text-left">
+<div class="container my-5">
+    <section id="about" class="text-left animate-fadeInUp">
         <h2 class="section-title text-center">About Me</h2>
         <div class="section-bg">
-            <p>
-                I am a Software Engineer with expertise in backend development, microservices, and distributed systems.
-                Proficient in Go, Java, and modern technologies, I thrive in solving complex problems and optimizing performance.
-            </p>
-            <p>
-                I have over four years of experience in software engineering, working on various projects and technologies across different domains and industries.
-                I am passionate about learning new skills and exploring new challenges, and I am always looking for opportunities to grow and contribute to the software community.
+            <p class="fs-5">
+                Software Engineer with 4+ years of experience building scalable, high-performance applications using Go, Java, and microservices architecture. Proven expertise in distributed systems, SaaS platforms, and fintech solutions. Strong track record in optimizing system performance, designing multi-tenant architectures, and developing large-scale content and inventory management platforms.
             </p>
         </div>
     </section>
 
-    <section id="education" class="mt-4">
+    <section id="education" class="mt-5 animate-fadeInUp">
         <h2 class="section-title text-center">Education</h2>
         <div class="section-bg">
-            <p><strong>International University of Business Agriculture and Technology (IUBAT)</strong> (Aug 2019)</p>
-            <p>B.Sc. in Computer Science</p>
-        </div>
-    </section>
-
-    <section id="experience" class="mt-4">
-        <h2 class="section-title text-center">Work Experience</h2>
-        <div class="section-bg">
-            <h5>Software Engineer - Vivasoft Limited</h5>
-            <p class="text-muted">Jun 2022 – Present | Dhaka, Bangladesh</p>
-            <ul>
-                <li>Implemented customized logging features and optimized response times using Go’s concurrency model.</li>
-                <li>Developed seven microservices for Hink, utilizing Elasticsearch for geo-based content clustering.</li>
-                <li>Built multi-tenant architecture inventory systems for SaaS products.</li>
-            </ul>
-        </div>
-        <div class="section-bg mt-4">
-            <h5>Junior Software Engineer - TechnoVista Limited</h5>
-            <p class="text-muted">Jan 2021 – May 2022 | Dhaka, Bangladesh</p>
-            <ul>
-                <li>Enhanced an Online Customer Service Management System (OCSMS) for a 1 million user base.</li>
-                <li>Optimized SQL performance by 40%, improving system reporting functionality.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="mt-4">
-        <h2 class="section-title text-center">Projects</h2>
-        <div class="section-bg">
-            <ul>
-                <li>OCR system for Bengali text using hybrid neural networks, achieving 92.7% accuracy.</li>
-                <li>Developed a book-sharing platform using Java Spring Boot, Tomcat server, and MySQL.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="skills" class="mt-4">
-        <h2 class="section-title text-center">Skills</h2>
-        <div class="section-bg">
-            <ul>
-                <li><strong>Programming Languages:</strong> Go, Java, JavaScript, C++</li>
-                <li><strong>Technologies:</strong> Gin, Echo, Spring, Redis, RabbitMQ, Docker, Kubernetes</li>
-                <li><strong>Tools:</strong> Git, IntelliJ, Goland, BIRT, MySQL</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="activities" class="mt-4">
-        <h2 class="section-title text-center">Activities</h2>
-        <div class="section-bg">
-            <p><strong>Competitive Programming Club Manager, IUBAT</strong> (2017 – 2018)</p>
-            <ul>
-                <li>Organized several intra-university programming contests at IUBAT.</li>
-                <li>Planned and executed boot camps for competitive programming enthusiasts.</li>
-                <li>Regularized session systems to improve problem-solving skills among students.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact" class="mt-4">
-        <h2 class="section-title text-center">Contact</h2>
-        <div class="section-bg text-center">
-            <p>Feel free to connect with me on the following platforms:</p>
-            <div class="contact-buttons">
-                <a href="mailto:damdebotush@gmail.com" target="_blank" class="btn btn-custom">
-                    <i class="fas fa-envelope"></i> Gmail
-                </a>
-                <a href="https://www.linkedin.com/in/dam-debotush/" target="_blank" class="btn btn-custom">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/debotush" target="_blank" class="btn btn-custom">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <h5 class="fw-bold">M.Sc. in Software Engineering (in progress)</h5>
+                    <p class="mb-1">University of Tartu, Estonia</p>
+                    <p class="text-muted">Sep 2025 – Present</p>
+                </div>
+                <span class="badge bg-primary fs-6">Current</span>
+            </div>
+            <hr>
+            <div>
+                <h5 class="fw-bold">B.Sc. in Computer Science</h5>
+                <p class="mb-1">International University of Business Agriculture and Technology (IUBAT), Bangladesh</p>
+                <p class="text-muted">Graduated: 2019</p>
             </div>
         </div>
     </section>
 
+    <section id="experience" class="mt-5 animate-fadeInUp">
+        <h2 class="section-title text-center">Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="section-bg">
+                    <h5 class="fw-bold">Senior Software Engineer L - I – Vivasoft Limited (Bkash Partnered Employee)</h5>
+                    <p class="text-muted">Jan 2025 – Aug 2025 | Dhaka, Bangladesh</p>
+                    <ul>
+                        <li>Developed and maintained a <strong>toll payment microservice</strong> serving <strong>10 million+ users</strong> at <strong>bKash</strong>, one of the largest fintech companies in Bangladesh.</li>
+                        <li>Implemented a <strong>customized logging system</strong> with unique Trace-IDs across multiple microservices, improving traceability and system monitoring.</li>
+                        <li>Optimized response times by leveraging <strong>Go's concurrency model</strong> and asynchronous workers, consistently achieving a <strong>5-second SLA</strong> despite complex multi-service dependencies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="section-bg">
+                    <h5 class="fw-bold">Software Engineer – Vivasoft Limited</h5>
+                    <p class="text-muted">Jun 2022 – Dec 2024 | Dhaka, Bangladesh</p>
+                    <ul>
+                        <li>Built <strong>7 microservices</strong> for a <strong>location-based media sharing platform (HINK)</strong>, leveraging <strong>Elasticsearch geo queries</strong> to dynamically cluster content and improve search efficiency.</li>
+                        <li>Optimized large file uploads (up to <strong>5 GB</strong>) using <strong>pre-signed URLs</strong> with sliding window techniques, reducing upload time by <strong>30%</strong>.</li>
+                        <li>Contributed to <strong>Financfy (SaaS)</strong> by designing a <strong>multi-tenant inventory system</strong>, supporting seamless scaling across multiple clients.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="section-bg">
+                    <h5 class="fw-bold">Junior Software Engineer – TechnoVista Limited</h5>
+                    <p class="text-muted">Jan 2021 – May 2022 | Dhaka, Bangladesh</p>
+                    <ul>
+                        <li>Improved SQL query performance by <strong>40%</strong> in a Customer Service Management System designed for 1M+ users.</li>
+                        <li>Enhanced reporting features and streamlined backend logic to improve customer service efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="section-bg">
+                    <h5 class="fw-bold">Participant – Samsung R&D Tech Academy</h5>
+                    <p class="text-muted">Dec 2019 | Dhaka, Bangladesh</p>
+                    <ul>
+                        <li>Focused on data structures & algorithms, developing problem-solving techniques for performance-oriented software solutions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="mt-5 animate-fadeInUp">
+        <h2 class="section-title text-center">Projects</h2>
+        <div class="section-bg">
+            <h5 class="fw-bold">Book Sharing Platform</h5>
+            <p>Developed using Spring Boot, Tomcat, MySQL; enabled community-based book lending and tracking.</p>
+            <div class="mt-3">
+                <span class="badge bg-secondary me-2">Spring Boot</span>
+                <span class="badge bg-secondary me-2">Tomcat</span>
+                <span class="badge bg-secondary me-2">MySQL</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="mt-5 animate-fadeInUp">
+        <h2 class="section-title text-center">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h5><i class="fas fa-code"></i> Programming Languages</h5>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-go-plain colored"></i>
+                        <span>Go</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-java-plain colored"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-cplusplus-plain colored"></i>
+                        <span>C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h5><i class="fas fa-cubes"></i> Frameworks & Libraries</h5>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-go-plain colored"></i>
+                        <span>Gin</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-go-plain colored"></i>
+                        <span>Echo</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-spring-plain colored"></i>
+                        <span>Spring Boot</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-java-plain colored"></i>
+                        <span>Hibernate</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-go-plain colored"></i>
+                        <span>GORM</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-java-plain colored"></i>
+                        <span>JPA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h5><i class="fas fa-database"></i> Databases</h5>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-postgresql-plain colored"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-mysql-plain colored"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-oracle-original colored"></i>
+                        <span>Oracle</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-elasticsearch-plain colored"></i>
+                        <span>Elasticsearch</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-redis-plain colored"></i>
+                        <span>Redis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h5><i class="fas fa-cloud"></i> DevOps & Cloud</h5>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-docker-plain colored"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-kubernetes-plain colored"></i>
+                        <span>Kubernetes</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-rabbitmq-plain colored"></i>
+                        <span>RabbitMQ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h5><i class="fas fa-tools"></i> Tools & Platforms</h5>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-linux-plain colored"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="devicon-intellij-plain colored"></i>
+                        <span>IntelliJ</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>Goland</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>BIRT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h5><i class="fas fa-lightbulb"></i> Concepts & Methodologies</h5>
+                <div class="concept-badges">
+                    <span class="concept-badge">Microservices</span>
+                    <span class="concept-badge">Multi-tenant SaaS</span>
+                    <span class="concept-badge">Unit Testing</span>
+                    <span class="concept-badge">Distributed Systems</span>
+                    <span class="concept-badge">System Architecture</span>
+                    <span class="concept-badge">Performance Optimization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="mt-5 animate-fadeInUp">
+        <h2 class="section-title text-center">Awards & Achievements</h2>
+        <div class="section-bg">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-trophy text-warning display-6 mb-3"></i>
+                            <h5 class="card-title">Top 10</h5>
+                            <p class="card-text">IUBAT Odyssey Inter-University Programming Contest (2019)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-medal text-warning display-6 mb-3"></i>
+                            <h5 class="card-title">Champion</h5>
+                            <p class="card-text">IUBAT Intra-University Programming Contest (2017)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-award text-warning display-6 mb-3"></i>
+                            <h5 class="card-title">Honorable Mention</h5>
+                            <p class="card-text">ACM ICPC Dhaka Regional (2016, 2018, 2019)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="mt-5 animate-fadeInUp">
+        <h2 class="section-title text-center">Get In Touch</h2>
+        <div class="section-bg text-center">
+            <p class="fs-5">Feel free to connect with me on the following platforms:</p>
+            <div class="contact-buttons d-flex justify-content-center flex-wrap gap-3">
+                <a href="mailto:damdebotush@gmail.com" target="_blank" class="btn btn-custom">
+                    <i class="fas fa-envelope me-2"></i> Gmail
+                </a>
+                <a href="tel:+37253777543" class="btn btn-custom">
+                    <i class="fas fa-phone me-2"></i> +37253777543
+                </a>
+                <a href="https://www.linkedin.com/in/dam-debotush/" target="_blank" class="btn btn-custom">
+                    <i class="fab fa-linkedin me-2"></i> LinkedIn
+                </a>
+                <a href="https://github.com/debotush" target="_blank" class="btn btn-custom">
+                    <i class="fab fa-github me-2"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
 </div>
 
 <footer>
-    <p>&copy; 2024 Debotush Dam. All Rights Reserved.</p>
+    <div class="container">
+        <p class="mb-0">&copy; 2024 Debotush Dam. All Rights Reserved.</p>
+    </div>
 </footer>
+
+<div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </body>
 </html>
